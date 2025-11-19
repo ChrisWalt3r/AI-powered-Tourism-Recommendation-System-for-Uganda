@@ -1,0 +1,649 @@
+MVP DEVELOPMENT SPECIFICATION: AI-Powered Uganda Tourism Recommender
+Project Overview
+Project Name: AI-Powered Uganda Tourism Recommendation System (MVP)
+Core Technology: Google Gemini API (Free Tier)
+Timeline: 4-5 weeks
+Team: Group Eight - Computer Science Department
+
+MVP Vision
+Create a simple, intelligent web application that provides personalized Ugandan tourism destination recommendations based on natural language queries using AI.
+
+Success Criteria
+Users can input travel preferences in plain text
+
+System returns 2-3 relevant Ugandan destinations with structured information
+
+Fully functional web application deployed and accessible
+
+TECHNICAL SPECIFICATION
+Tech Stack
+Frontend
+Framework: React.js with Vite
+
+Styling: Tailwind CSS
+
+HTTP Client: Axios or Fetch API
+
+Deployment: Vercel (free tier)
+
+Backend
+Runtime: Node.js
+
+Framework: Express.js
+
+AI Integration: Google AI JavaScript SDK (@google/generative-ai)
+
+Data Storage: Static JSON file (destinations.json)
+
+CORS: cors package
+
+Deployment: Render (free tier)
+
+Development Tools
+Version Control: Git & GitHub
+
+Package Manager: npm
+
+API Testing: Postman/Thunder Client
+
+File Structure
+text
+uganda-tourism-mvp/
+├── backend/
+│   ├── server.js
+│   ├── destinations.json
+│   ├── package.json
+│   └── .env
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── SearchForm.jsx
+│   │   │   └── RecommendationCard.jsx
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   └── index.html
+└── README.md
+DATA SPECIFICATION
+Destinations JSON Schema
+json
+[
+  {
+    "id": 1,
+    "name": "Bwindi Impenetrable National Park",
+    "region": "Southwestern",
+    "type": ["Wildlife", "Adventure"],
+    "key_activities": ["Gorilla Trekking", "Bird Watching", "Nature Hikes"],
+    "budget_range": "High",
+    "description": "Home to nearly half of the world's remaining mountain gorillas."
+  },
+  {
+    "id": 2,
+    "name": "Sipi Falls",
+    "region": "Eastern",
+    "type": ["Nature", "Adventure", "Relaxation"],
+    "key_activities": ["Hiking", "Abseiling", "Coffee Tours"],
+    "budget_range": "Medium",
+    "description": "A series of three stunning waterfalls on the foothills of Mt. Elgon."
+  },
+  {
+    "id": 3,
+    "name": "Queen Elizabeth National Park",
+    "region": "Western",
+    "type": ["Wildlife", "Nature"],
+    "key_activities": ["Game Drives", "Boat Cruise", "Chimp Tracking"],
+    "budget_range": "Medium",
+    "description": "Known for its tree-climbing lions and diverse wildlife."
+  },
+  {
+    "id": 4,
+    "name": "Jinja (Source of the Nile)",
+    "region": "Eastern",
+    "type": ["Adventure", "Water", "Cultural"],
+    "key_activities": ["White Water Rafting", "Bungee Jumping", "Nile Cruise"],
+    "budget_range": "Medium",
+    "description": "Adventure capital of East Africa, source of the River Nile."
+  },
+  {
+    "id": 5,
+    "name": "Murchison Falls National Park",
+    "region": "Northern",
+    "type": ["Wildlife", "Nature"],
+    "key_activities": ["Game Drives", "Waterfall Viewing", "Nile Delta Cruise"],
+    "budget_range": "Medium-High",
+    "description": "Home to the powerful Murchison Falls and abundant wildlife."
+  },
+  {
+    "id": 6,
+    "name": "Lake Bunyonyi",
+    "region": "Southwestern",
+    "type": ["Relaxation", "Nature", "Cultural"],
+    "key_activities": ["Canoeing", "Bird Watching", "Community Visits"],
+    "budget_range": "Low-Medium",
+    "description": "Serene lake with 29 islands, perfect for relaxation."
+  },
+  {
+    "id": 7,
+    "name": "Kampala City",
+    "region": "Central",
+    "type": ["Cultural", "Urban", "Historical"],
+    "key_activities": ["City Tour", "Nightlife", "Cultural Sites", "Shopping"],
+    "budget_range": "Low-Medium",
+    "description": "Vibrant capital city with rich history and modern amenities."
+  },
+  {
+    "id": 8,
+    "name": "Mgahinga Gorilla National Park",
+    "region": "Southwestern",
+    "type": ["Wildlife", "Adventure"],
+    "key_activities": ["Gorilla Trekking", "Volcano Hiking", "Golden Monkey Tracking"],
+    "budget_range": "High",
+    "description": "Home to mountain gorillas and the Virunga Volcanoes."
+  },
+  {
+    "id": 9,
+    "name": "Kibale National Park",
+    "region": "Western",
+    "type": ["Wildlife", "Nature"],
+    "key_activities": ["Chimp Tracking", "Bird Watching", "Nature Walks"],
+    "budget_range": "Medium-High",
+    "description": "Primate capital of the world with 13 species of primates."
+  },
+  {
+    "id": 10,
+    "name": "Ziwa Rhino Sanctuary",
+    "region": "Central",
+    "type": ["Wildlife", "Conservation"],
+    "key_activities": ["Rhino Tracking", "Bird Watching", "Nature Walks"],
+    "budget_range": "Low-Medium",
+    "description": "Only place to see wild rhinos in Uganda."
+  }
+]
+AI PROMPT ENGINEERING SPECIFICATION
+Complete System Prompt for Gemini API
+text
+You are an expert, friendly, and knowledgeable tourism assistant specialized exclusively in Uganda. Your primary goal is to provide helpful, accurate, and personalized travel recommendations to users planning a trip to Uganda.
+
+Below is a list of tourist destinations in Uganda. Use this list as your primary source of information. Do not recommend destinations outside of this list.
+
+[DESTINATIONS_JSON_DATA]
+
+---
+User Query: "{USER_QUERY}"
+---
+
+Carefully analyze the user's query and match it to the most relevant destinations from the list based on the following criteria, in order of priority:
+1.  **Interests & Activity Match:** The destination's type and key_activities must align with the user's stated interests.
+2.  **Budget Compatibility:** Compare the user's stated budget to the destination's budget_range.
+3.  **Regional Preference:** If the user mentions a specific region, prioritize destinations in that region.
+4.  **Trip Duration:** Consider the practicality of the destination for the user's trip length.
+5.  **Diversity:** Suggest a mix of 2-3 destinations if possible.
+
+You MUST format your response as a valid JSON object. Do not include any other text, explanations, or markdown formatting.
+
+The JSON structure must be exactly as follows:
+{
+  "recommendations": [
+    {
+      "name": "Exact destination name from the list",
+      "match_reason": "A concise, 1-2 sentence explanation for why this destination was chosen, directly referencing the user's query.",
+      "suggested_activities": ["Activity 1", "Activity 2"],
+      "estimated_budget": "Low/Medium/High",
+      "best_time_to_visit": "Brief note on timing"
+    }
+  ]
+}
+
+If no destinations match, return: {"recommendations": []}
+If the query is vague, ask for clarification in the match_reason field.
+BACKEND IMPLEMENTATION SPECIFICATION
+Server Requirements
+javascript
+// server.js - Complete backend implementation
+
+const express = require('express');
+const cors = require('cors');
+const { GoogleGenerativeAI } = require('@google/generative-ai');
+require('dotenv').config();
+
+const app = express();
+const port = process.env.PORT || 5000;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Load destinations data
+const destinations = require('./destinations.json');
+
+// Initialize Gemini AI
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+// Recommendation endpoint
+app.post('/api/recommend', async (req, res) => {
+  try {
+    const { query } = req.body;
+
+    if (!query) {
+      return res.status(400).json({ error: 'Query is required' });
+    }
+
+    // Construct the system prompt
+    const systemPrompt = `
+You are an expert, friendly, and knowledgeable tourism assistant specialized exclusively in Uganda. Your primary goal is to provide helpful, accurate, and personalized travel recommendations to users planning a trip to Uganda.
+
+Below is a list of tourist destinations in Uganda. Use this list as your primary source of information. Do not recommend destinations outside of this list.
+
+${JSON.stringify(destinations, null, 2)}
+
+---
+User Query: "${query}"
+---
+
+Carefully analyze the user's query and match it to the most relevant destinations from the list based on the following criteria, in order of priority:
+1.  **Interests & Activity Match:** The destination's type and key_activities must align with the user's stated interests.
+2.  **Budget Compatibility:** Compare the user's stated budget to the destination's budget_range.
+3.  **Regional Preference:** If the user mentions a specific region, prioritize destinations in that region.
+4.  **Trip Duration:** Consider the practicality of the destination for the user's trip length.
+5.  **Diversity:** Suggest a mix of 2-3 destinations if possible.
+
+You MUST format your response as a valid JSON object. Do not include any other text, explanations, or markdown formatting.
+
+The JSON structure must be exactly as follows:
+{
+  "recommendations": [
+    {
+      "name": "Exact destination name from the list",
+      "match_reason": "A concise, 1-2 sentence explanation for why this destination was chosen, directly referencing the user's query.",
+      "suggested_activities": ["Activity 1", "Activity 2"],
+      "estimated_budget": "Low/Medium/High",
+      "best_time_to_visit": "Brief note on timing"
+    }
+  ]
+}
+
+If no destinations match, return: {"recommendations": []}
+If the query is vague, ask for clarification in the match_reason field.
+`;
+
+    // Get Gemini model
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+    // Generate content
+    const result = await model.generateContent(systemPrompt);
+    const response = await result.response;
+    const text = response.text();
+
+    // Parse JSON response
+    let recommendations;
+    try {
+      recommendations = JSON.parse(text);
+    } catch (parseError) {
+      console.error('Error parsing AI response:', parseError);
+      return res.status(500).json({ error: 'Failed to parse AI response' });
+    }
+
+    res.json(recommendations);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'Server is running', timestamp: new Date().toISOString() });
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+Backend Dependencies
+json
+{
+  "name": "uganda-tourism-backend",
+  "version": "1.0.0",
+  "description": "Backend for Uganda Tourism AI Recommender",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
+Environment Variables
+env
+# .env file
+GEMINI_API_KEY=your_gemini_api_key_here
+PORT=5000
+FRONTEND IMPLEMENTATION SPECIFICATION
+Main App Component
+jsx
+// App.jsx - Main frontend component
+import React, { useState } from 'react';
+import SearchForm from './components/SearchForm';
+import RecommendationCard from './components/RecommendationCard';
+
+function App() {
+  const [recommendations, setRecommendations] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSearch = async (query) => {
+    setLoading(true);
+    setError('');
+    
+    try {
+      const response = await fetch('http://localhost:5000/api/recommend', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ query }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to get recommendations');
+      }
+
+      const data = await response.json();
+      setRecommendations(data.recommendations || []);
+    } catch (err) {
+      setError('Error fetching recommendations. Please try again.');
+      console.error('Error:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
+      <div className="container mx-auto px-4 py-8">
+        {/* Header */}
+        <header className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-green-800 mb-4">
+            Discover Uganda
+          </h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Your AI-powered travel companion for exploring the Pearl of Africa. 
+            Tell us what you're looking for and get personalized recommendations.
+          </p>
+        </header>
+
+        {/* Search Form */}
+        <SearchForm onSearch={handleSearch} loading={loading} />
+
+        {/* Error Message */}
+        {error && (
+          <div className="max-w-2xl mx-auto mb-8">
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+              {error}
+            </div>
+          </div>
+        )}
+
+        {/* Loading State */}
+        {loading && (
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
+            <p className="mt-2 text-gray-600">Finding the perfect destinations for you...</p>
+          </div>
+        )}
+
+        {/* Recommendations */}
+        {!loading && recommendations.length > 0 && (
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+              Recommended Destinations
+            </h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              {recommendations.map((rec, index) => (
+                <RecommendationCard key={index} recommendation={rec} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* No Results */}
+        {!loading && recommendations.length === 0 && !error && (
+          <div className="max-w-2xl mx-auto text-center text-gray-500">
+            <p>No recommendations yet. Enter your travel preferences to get started!</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default App;
+Search Form Component
+jsx
+// components/SearchForm.jsx
+import React, { useState } from 'react';
+
+const SearchForm = ({ onSearch, loading }) => {
+  const [query, setQuery] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (query.trim() && !loading) {
+      onSearch(query.trim());
+    }
+  };
+
+  const exampleQueries = [
+    "I have 2 days and a medium budget for wildlife viewing",
+    "Looking for adventure activities near Kampala",
+    "Family-friendly destinations with low budget",
+    "Cultural experiences in Western Uganda for 5 days"
+  ];
+
+  return (
+    <div className="max-w-2xl mx-auto mb-12">
+      <form onSubmit={handleSubmit} className="mb-6">
+        <div className="flex gap-2">
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Describe your dream Uganda trip (e.g., '3-day wildlife safari with medium budget')"
+            className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            disabled={loading}
+          />
+          <button
+            type="submit"
+            disabled={!query.trim() || loading}
+            className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          >
+            {loading ? 'Searching...' : 'Explore'}
+          </button>
+        </div>
+      </form>
+
+      {/* Example Queries */}
+      <div>
+        <p className="text-sm text-gray-600 mb-3">Try these examples:</p>
+        <div className="flex flex-wrap gap-2">
+          {exampleQueries.map((example, index) => (
+            <button
+              key={index}
+              onClick={() => setQuery(example)}
+              disabled={loading}
+              className="px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 transition-colors"
+            >
+              {example}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SearchForm;
+Recommendation Card Component
+jsx
+// components/RecommendationCard.jsx
+import React from 'react';
+
+const RecommendationCard = ({ recommendation }) => {
+  const getBudgetColor = (budget) => {
+    switch (budget.toLowerCase()) {
+      case 'low': return 'bg-green-100 text-green-800';
+      case 'medium': return 'bg-yellow-100 text-yellow-800';
+      case 'high': return 'bg-red-100 text-red-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
+
+  return (
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
+      <div className="p-6">
+        <div className="flex justify-between items-start mb-3">
+          <h3 className="text-xl font-semibold text-gray-800">
+            {recommendation.name}
+          </h3>
+          <span className={`px-3 py-1 rounded-full text-xs font-medium ${getBudgetColor(recommendation.estimated_budget)}`}>
+            {recommendation.estimated_budget} Budget
+          </span>
+        </div>
+        
+        <p className="text-gray-600 mb-4">{recommendation.match_reason}</p>
+        
+        <div className="mb-4">
+          <h4 className="font-medium text-gray-700 mb-2">Suggested Activities:</h4>
+          <div className="flex flex-wrap gap-2">
+            {recommendation.suggested_activities.map((activity, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
+              >
+                {activity}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        <div className="flex justify-between items-center text-sm text-gray-500">
+          <span>⭐ Best time: {recommendation.best_time_to_visit}</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default RecommendationCard;
+Frontend Dependencies
+json
+{
+  "name": "uganda-tourism-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.5"
+  }
+}
+DEPLOYMENT SPECIFICATION
+Backend Deployment (Render)
+Connect GitHub repository to Render
+
+Set environment variable: GEMINI_API_KEY
+
+Build command: npm install
+
+Start command: npm start
+
+Frontend Deployment (Vercel)
+Connect GitHub repository to Vercel
+
+Build command: npm run build
+
+Output directory: dist
+
+Update API URL in frontend to production backend URL
+
+DEVELOPMENT PHASES
+Phase 1: Foundation Setup (Week 1)
+Set up GitHub repository
+
+Initialize backend with Express.js
+
+Initialize frontend with React + Vite
+
+Create basic destinations.json
+
+Get Gemini API key
+
+Phase 2: Core AI Integration (Week 2)
+Implement backend API endpoint
+
+Integrate Gemini AI SDK
+
+Test prompt engineering with Postman
+
+Create error handling
+
+Phase 3: Frontend Development (Week 3)
+Build React components
+
+Implement search functionality
+
+Style with Tailwind CSS
+
+Connect frontend to backend
+
+Phase 4: Testing & Deployment (Week 4)
+Comprehensive testing
+
+Deploy backend to Render
+
+Deploy frontend to Vercel
+
+Final demo preparation
+
+TESTING SCENARIOS
+Sample User Queries to Test
+"I want to see gorillas with a high budget"
+
+"Weekend trip from Kampala with low budget"
+
+"Adventure activities for 3 days"
+
+"Cultural experiences in Western Uganda"
+
+"Family vacation with medium budget"
+
+Expected Output Validation
+Returns valid JSON structure
+
+Recommendations match query criteria
+
+Budget levels are appropriate
+
+Activities are relevant to destination
+
+Error handling works for invalid queries
+

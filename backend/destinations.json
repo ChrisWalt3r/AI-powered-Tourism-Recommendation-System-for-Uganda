@@ -1,0 +1,492 @@
+[
+  {
+    "id": 1,
+    "name": "Bwindi Impenetrable National Park",
+    "region": "Southwestern",
+    "type": ["Wildlife", "Adventure"],
+    "key_activities": ["Gorilla Trekking", "Bird Watching", "Nature Hikes"],
+    "budget_range": "High Budget",
+    "description": "Home to nearly half of the world's remaining mountain gorillas.",
+    "best_time_to_visit": "June to August and December to February (Dry seasons)"
+  },
+  {
+    "id": 2,
+    "name": "Sipi Falls",
+    "region": "Eastern",
+    "type": ["Nature", "Adventure", "Relaxation"],
+    "key_activities": ["Hiking", "Abseiling", "Coffee Tours"],
+    "budget_range": "Medium Budget",
+    "description": "A series of three stunning waterfalls on the foothills of Mt. Elgon.",
+    "best_time_to_visit": "Year-round, best in dry seasons (Dec-Feb, June-Aug)"
+  },
+  {
+    "id": 3,
+    "name": "Queen Elizabeth National Park",
+    "region": "Western",
+    "type": ["Wildlife", "Nature"],
+    "key_activities": ["Game Drives", "Boat Cruise", "Chimp Tracking"],
+    "budget_range": "Medium Budget",
+    "description": "Known for its tree-climbing lions and diverse wildlife.",
+    "best_time_to_visit": "January to February and June to July (Dry seasons)"
+  },
+  {
+    "id": 4,
+    "name": "Jinja (Source of the Nile)",
+    "region": "Eastern",
+    "type": ["Adventure", "Water", "Cultural"],
+    "key_activities": ["White Water Rafting", "Bungee Jumping", "Nile Cruise"],
+    "budget_range": "Medium Budget",
+    "description": "Adventure capital of East Africa, source of the River Nile.",
+    "best_time_to_visit": "Year-round, rafting is excellent anytime"
+  },
+  {
+    "id": 5,
+    "name": "Murchison Falls National Park",
+    "region": "Northern",
+    "type": ["Wildlife", "Nature"],
+    "key_activities": ["Game Drives", "Waterfall Viewing", "Nile Delta Cruise"],
+    "budget_range": "Medium-High Budget",
+    "description": "Home to the powerful Murchison Falls and abundant wildlife.",
+    "best_time_to_visit": "December to February (Best for game viewing)"
+  },
+  {
+    "id": 6,
+    "name": "Lake Bunyonyi",
+    "region": "Southwestern",
+    "type": ["Relaxation", "Nature", "Cultural"],
+    "key_activities": ["Canoeing", "Bird Watching", "Community Visits"],
+    "budget_range": "Low-Medium Budget",
+    "description": "Serene lake with 29 islands, perfect for relaxation.",
+    "best_time_to_visit": "Year-round, pleasant climate always"
+  },
+  {
+    "id": 7,
+    "name": "Kampala City",
+    "region": "Central",
+    "type": ["Cultural", "Urban", "Historical"],
+    "key_activities": ["City Tour", "Nightlife", "Cultural Sites", "Shopping"],
+    "budget_range": "Low-Medium Budget",
+    "description": "Vibrant capital city with rich history and modern amenities.",
+    "best_time_to_visit": "Year-round, avoid heavy rains in April/May"
+  },
+  {
+    "id": 8,
+    "name": "Mgahinga Gorilla National Park",
+    "region": "Southwestern",
+    "type": ["Wildlife", "Adventure"],
+    "key_activities": ["Gorilla Trekking", "Volcano Hiking", "Golden Monkey Tracking"],
+    "budget_range": "High Budget",
+    "description": "Home to mountain gorillas and the Virunga Volcanoes.",
+    "best_time_to_visit": "June to August and December to January"
+  },
+  {
+    "id": 9,
+    "name": "Kibale National Park",
+    "region": "Western",
+    "type": ["Wildlife", "Nature"],
+    "key_activities": ["Chimp Tracking", "Bird Watching", "Nature Walks"],
+    "budget_range": "Medium-High Budget",
+    "description": "Primate capital of the world with 13 species of primates.",
+    "best_time_to_visit": "December to February and June to July"
+  },
+  {
+    "id": 10,
+    "name": "Ziwa Rhino Sanctuary",
+    "region": "Central",
+    "type": ["Wildlife", "Conservation"],
+    "key_activities": ["Rhino Tracking", "Bird Watching", "Nature Walks"],
+    "budget_range": "Low-Medium Budget",
+    "description": "Only place to see wild rhinos in Uganda.",
+    "best_time_to_visit": "Year-round, best tracking in dry mornings"
+  },
+  {
+    "id": 11,
+    "name": "Lake Mburo National Park",
+    "region": "Western",
+    "type": ["Wildlife", "Nature"],
+    "key_activities": ["Game Drives", "Boat Cruise", "Horseback Safaris"],
+    "budget_range": "Medium Budget",
+    "description": "The smallest savannah national park, famous for zebras and impalas.",
+    "best_time_to_visit": "June to August and December to February"
+  },
+  {
+    "id": 12,
+    "name": "Kidepo Valley National Park",
+    "region": "Northern",
+    "type": ["Wildlife", "Adventure", "Cultural"],
+    "key_activities": ["Game Drives", "Cultural Visits", "Nature Walks"],
+    "budget_range": "High Budget",
+    "description": "Uganda's most isolated national park, offering true wilderness and rugged savannah landscapes.",
+    "best_time_to_visit": "September to March (Dry season is best for game)"
+  },
+  {
+    "id": 13,
+    "name": "Rwenzori Mountains National Park",
+    "region": "Western",
+    "type": ["Adventure", "Nature"],
+    "key_activities": ["Mountain Climbing", "Hiking", "Bird Watching"],
+    "budget_range": "High Budget",
+    "description": "A UNESCO World Heritage site featuring snow-capped peaks and unique alpine vegetation.",
+    "best_time_to_visit": "June to August and December to February (Best for trekking)"
+  },
+  {
+    "id": 14,
+    "name": "Semuliki National Park",
+    "region": "Western",
+    "type": ["Nature", "Birding"],
+    "key_activities": ["Sempaya Hot Springs", "Bird Watching", "Nature Walks"],
+    "budget_range": "Medium Budget",
+    "description": "Famous for the Sempaya Hot Springs and being a birdwatcher's paradise.",
+    "best_time_to_visit": "December to February (Best for birding)"
+  },
+  {
+    "id": 15,
+    "name": "Entebbe Town",
+    "region": "Central",
+    "type": ["Urban", "Relaxation", "Nature"],
+    "key_activities": ["Botanical Gardens", "Beach Visits", "Zoo Visits"],
+    "budget_range": "Low-Medium Budget",
+    "description": "A colonial town on the shores of Lake Victoria, home to the international airport and botanical gardens.",
+    "best_time_to_visit": "Year-round, great weekend getaway"
+  },
+  {
+    "id": 16,
+    "name": "Ngamba Island Chimpanzee Sanctuary",
+    "region": "Central",
+    "type": ["Conservation", "Wildlife"],
+    "key_activities": ["Chimp Feeding", "Island Tours", "Volunteering"],
+    "budget_range": "Medium-High Budget",
+    "description": "A sanctuary on Lake Victoria dedicated to the care of orphaned chimpanzees.",
+    "best_time_to_visit": "Year-round, crossing depends on lake weather"
+  },
+  {
+    "id": 17,
+    "name": "Mabira Central Forest Reserve",
+    "region": "Central",
+    "type": ["Nature", "Adventure"],
+    "key_activities": ["Zip-lining", "Forest Walks", "Mangabey Tracking"],
+    "budget_range": "Low-Medium Budget",
+    "description": "One of Uganda's largest surviving natural forests, perfect for eco-tourism and adventure.",
+    "best_time_to_visit": "Year-round, drier months preferred for hiking"
+  },
+  {
+    "id": 18,
+    "name": "Mount Elgon National Park",
+    "region": "Eastern",
+    "type": ["Adventure", "Nature"],
+    "key_activities": ["Hiking", "Cave Exploration", "Caldera Walks"],
+    "budget_range": "Medium Budget",
+    "description": "An extinct shield volcano with the world's largest surface caldera.",
+    "best_time_to_visit": "June to August and December to March"
+  },
+  {
+    "id": 19,
+    "name": "Ssese Islands",
+    "region": "Central",
+    "type": ["Relaxation", "Beach"],
+    "key_activities": ["Beach Relaxation", "Fishing", "Nature Walks"],
+    "budget_range": "Low-Medium Budget",
+    "description": "An archipelago of 84 islands in Lake Victoria, known for white sand beaches and sunsets.",
+    "best_time_to_visit": "Year-round, perfect for holidays"
+  },
+  {
+    "id": 20,
+    "name": "Entebbe Zoo (UWEC)",
+    "region": "Central",
+    "type": ["Conservation", "Education", "Wildlife"],
+    "key_activities": ["Behind the Scenes Tours", "Zoo Visits", "Chimp Close-up"],
+    "budget_range": "Low-Medium Budget",
+    "description": "Also known as Entebbe Zoo, a center for wildlife education and rescue.",
+    "best_time_to_visit": "Year-round, open daily"
+  },
+  {
+    "id": 21,
+    "name": "Kasubi Tombs",
+    "region": "Central",
+    "type": ["Cultural", "Historical"],
+    "key_activities": ["Cultural Tours", "Historical Learning"],
+    "budget_range": "Low Budget",
+    "description": "The burial grounds for four Kabakas (Kings) of Buganda, a UNESCO World Heritage Site.",
+    "best_time_to_visit": "Year-round cultural site"
+  },
+  {
+    "id": 22,
+    "name": "Namugongo Martyrs Shrine",
+    "region": "Central",
+    "type": ["Religious", "Historical", "Cultural"],
+    "key_activities": ["Pilgrimage", "Museum Tours", "Prayer"],
+    "budget_range": "Low Budget",
+    "description": "A significant religious site commemorating the Uganda Martyrs.",
+    "best_time_to_visit": "Year-round, June 3rd is Martyrs Day (very crowded)"
+  },
+  {
+    "id": 23,
+    "name": "Fort Portal City",
+    "region": "Western",
+    "type": ["Urban", "Cultural", "Nature"],
+    "key_activities": ["Amabere Caves", "Crater Lakes", "Palace Visits"],
+    "budget_range": "Medium Budget",
+    "description": "Known as the tourism city of Uganda, gateway to major national parks and crater lakes.",
+    "best_time_to_visit": "Year-round, pleasant climate"
+  },
+  {
+    "id": 24,
+    "name": "Toro-Semliki Wildlife Reserve",
+    "region": "Western",
+    "type": ["Wildlife", "Nature"],
+    "key_activities": ["Game Drives", "Primate Walks", "Birding"],
+    "budget_range": "Medium Budget",
+    "description": "Uganda's oldest protected area, located between the Rwenzori mountains and Lake Albert.",
+    "best_time_to_visit": "December to February"
+  },
+  {
+    "id": 25,
+    "name": "Pian Upe Wildlife Reserve",
+    "region": "Eastern",
+    "type": ["Wildlife", "Adventure"],
+    "key_activities": ["Game Drives", "Cultural Visits", "Mountain Hiking"],
+    "budget_range": "Medium Budget",
+    "description": "One of the largest conservation areas, offering off-the-beaten-path wildlife experiences.",
+    "best_time_to_visit": "January to March (Dry season)"
+  },
+  {
+    "id": 26,
+    "name": "Bigodi Wetland Sanctuary",
+    "region": "Western",
+    "type": ["Nature", "Birding", "Community"],
+    "key_activities": ["Swamp Walks", "Primate Viewing", "Community Tours"],
+    "budget_range": "Low-Medium Budget",
+    "description": "A community-run sanctuary famous for its rich biodiversity, especially primates and birds.",
+    "best_time_to_visit": "Year-round, best in dry seasons"
+  },
+  {
+    "id": 27,
+    "name": "Budongo Forest",
+    "region": "Western",
+    "type": ["Nature", "Wildlife"],
+    "key_activities": ["Chimp Tracking", "Bird Watching", "Nature Walks"],
+    "budget_range": "Medium Budget",
+    "description": "Part of the Murchison Falls conservation area, home to a large population of chimpanzees.",
+    "best_time_to_visit": "December to February and June to August"
+  },
+  {
+    "id": 28,
+    "name": "Kalinzu Forest",
+    "region": "Western",
+    "type": ["Nature", "Wildlife"],
+    "key_activities": ["Chimp Tracking", "Forest Walks", "Birding"],
+    "budget_range": "Low-Medium Budget",
+    "description": "A forest reserve near Queen Elizabeth NP, offering affordable chimp tracking.",
+    "best_time_to_visit": "June to September and December to February"
+  },
+  {
+    "id": 29,
+    "name": "Kyambura Gorge",
+    "region": "Western",
+    "type": ["Nature", "Wildlife"],
+    "key_activities": ["Chimp Tracking", "Nature Walks", "Scenic Viewing"],
+    "budget_range": "Medium-High Budget",
+    "description": "Known as the 'Valley of Apes', a stunning underground forest in Queen Elizabeth NP.",
+    "best_time_to_visit": "June to August and December to February"
+  },
+  {
+    "id": 30,
+    "name": "Ishasha Sector (QENP)",
+    "region": "Western",
+    "type": ["Wildlife"],
+    "key_activities": ["Game Drives", "Lion Tracking"],
+    "budget_range": "Medium Budget",
+    "description": "Famous for its unique tree-climbing lions.",
+    "best_time_to_visit": "June to September and January to February"
+  },
+  {
+    "id": 31,
+    "name": "Sezibwa Falls",
+    "region": "Central",
+    "type": ["Cultural", "Nature"],
+    "key_activities": ["Nature Walks", "Cultural Tours", "Birding"],
+    "budget_range": "Low Budget",
+    "description": "A cultural heritage site with waterfalls, believed to have been born by a woman.",
+    "best_time_to_visit": "Year-round"
+  },
+  {
+    "id": 32,
+    "name": "Aruu Falls",
+    "region": "Northern",
+    "type": ["Adventure", "Nature"],
+    "key_activities": ["Waterfall Hiking", "Swimming", "Nature Walks"],
+    "budget_range": "Low-Medium Budget",
+    "description": "Cascading waterfalls in Pader district, a hidden gem for adventure lovers.",
+    "best_time_to_visit": "Year-round, best flow in rainy seasons"
+  },
+  {
+    "id": 33,
+    "name": "Nyero Rock Paintings",
+    "region": "Eastern",
+    "type": ["Historical", "Cultural"],
+    "key_activities": ["Rock Art Viewing", "Hiking", "Cultural History"],
+    "budget_range": "Low Budget",
+    "description": "Ancient rock art sites dating back to the Iron Age.",
+    "best_time_to_visit": "Year-round"
+  },
+  {
+    "id": 34,
+    "name": "Mount Moroto",
+    "region": "Northern",
+    "type": ["Adventure", "Hiking"],
+    "key_activities": ["Mountain Hiking", "Cultural Visits", "Camping"],
+    "budget_range": "Medium Budget",
+    "description": "A mountain in the Karamoja region offering challenging hikes and cultural encounters.",
+    "best_time_to_visit": "September to March (Dry season)"
+  },
+  {
+    "id": 35,
+    "name": "Uganda National Museum",
+    "region": "Central",
+    "type": ["Cultural", "Historical"],
+    "key_activities": ["Museum Tours", "Cultural Learning"],
+    "budget_range": "Low Budget",
+    "description": "The oldest museum in East Africa, showcasing Uganda's cultural heritage.",
+    "best_time_to_visit": "Year-round"
+  },
+  {
+    "id": 36,
+    "name": "Ndere Cultural Centre",
+    "region": "Central",
+    "type": ["Cultural", "Entertainment"],
+    "key_activities": ["Cultural Dance Shows", "Dinner Theater"],
+    "budget_range": "Medium Budget",
+    "description": "Home of the Ndere Troupe, offering spectacular traditional music and dance performances.",
+    "best_time_to_visit": "Wednesday, Friday, and Sunday evenings"
+  },
+  {
+    "id": 37,
+    "name": "Bahai Temple",
+    "region": "Central",
+    "type": ["Religious", "Nature"],
+    "key_activities": ["Temple Visits", "Garden Walks", "Meditation"],
+    "budget_range": "Low Budget",
+    "description": "The only Bahá'í House of Worship on the African continent, set in beautiful gardens.",
+    "best_time_to_visit": "Year-round"
+  },
+  {
+    "id": 38,
+    "name": "Gaddafi National Mosque",
+    "region": "Central",
+    "type": ["Religious", "Cultural", "Urban"],
+    "key_activities": ["Mosque Tours", "City Views"],
+    "budget_range": "Low Budget",
+    "description": "The largest mosque in Uganda, offering panoramic views of Kampala from its minaret.",
+    "best_time_to_visit": "Year-round"
+  },
+  {
+    "id": 39,
+    "name": "Nakasero Market",
+    "region": "Central",
+    "type": ["Cultural", "Urban"],
+    "key_activities": ["Shopping", "Food Tasting", "Photography"],
+    "budget_range": "Low Budget",
+    "description": "Kampala's most famous market for fresh produce and local vibes.",
+    "best_time_to_visit": "Year-round, mornings are best"
+  },
+  {
+    "id": 40,
+    "name": "Bulago Island",
+    "region": "Central",
+    "type": ["Relaxation", "Beach"],
+    "key_activities": ["Beach Relaxation", "Sailing", "Nature Walks"],
+    "budget_range": "High Budget",
+    "description": "A private island resort on Lake Victoria, perfect for luxury escapes.",
+    "best_time_to_visit": "Year-round"
+  },
+  {
+    "id": 41,
+    "name": "Tororo Rock",
+    "region": "Eastern",
+    "type": ["Adventure", "Hiking"],
+    "key_activities": ["Rock Climbing", "Hiking", "Cave Exploration"],
+    "budget_range": "Low Budget",
+    "description": "A massive rock formation defining the town of Tororo.",
+    "best_time_to_visit": "Year-round"
+  },
+  {
+    "id": 42,
+    "name": "Itanda Falls",
+    "region": "Eastern",
+    "type": ["Adventure", "Water"],
+    "key_activities": ["White Water Rafting", "Kayaking", "Sightseeing"],
+    "budget_range": "Medium Budget",
+    "description": "A powerful waterfall on the Nile, popular for extreme water sports.",
+    "best_time_to_visit": "Year-round"
+  },
+  {
+    "id": 43,
+    "name": "Mpanga Forest Reserve",
+    "region": "Central",
+    "type": ["Nature", "Birding"],
+    "key_activities": ["Forest Walks", "Bird Watching", "Butterfly Watching"],
+    "budget_range": "Low Budget",
+    "description": "An accessible forest reserve near Kampala with impressive trees and birdlife.",
+    "best_time_to_visit": "Year-round"
+  },
+  {
+    "id": 44,
+    "name": "Mabamba Swamp",
+    "region": "Central",
+    "type": ["Nature", "Birding"],
+    "key_activities": ["Shoebill Tracking", "Canoeing", "Bird Watching"],
+    "budget_range": "Medium Budget",
+    "description": "One of the best places in the world to spot the elusive Shoebill Stork.",
+    "best_time_to_visit": "Year-round, mornings are best"
+  },
+  {
+    "id": 45,
+    "name": "Ajai Wildlife Reserve",
+    "region": "Northern",
+    "type": ["Wildlife", "Nature"],
+    "key_activities": ["Game Viewing", "Nature Walks"],
+    "budget_range": "Low-Medium Budget",
+    "description": "A wildlife reserve along the Albert Nile, historically a rhino sanctuary.",
+    "best_time_to_visit": "December to March"
+  },
+  {
+    "id": 46,
+    "name": "Kabaka's Lake",
+    "region": "Central",
+    "type": ["Cultural", "Nature"],
+    "key_activities": ["Bird Watching", "Cultural History"],
+    "budget_range": "Low Budget",
+    "description": "The largest man-made lake in Uganda, created by Kabaka Mwanga II.",
+    "best_time_to_visit": "Year-round"
+  },
+  {
+    "id": 47,
+    "name": "Rubaga Cathedral",
+    "region": "Central",
+    "type": ["Religious", "Historical"],
+    "key_activities": ["Church Tours", "Prayer", "City Views"],
+    "budget_range": "Low Budget",
+    "description": "The parent cathedral of the Roman Catholic Archdiocese of Kampala, located on Rubaga Hill.",
+    "best_time_to_visit": "Year-round"
+  },
+  {
+    "id": 48,
+    "name": "Namirembe Cathedral",
+    "region": "Central",
+    "type": ["Religious", "Historical"],
+    "key_activities": ["Church Tours", "Prayer", "City Views"],
+    "budget_range": "Low Budget",
+    "description": "The oldest cathedral in Uganda, offering history and great views of Kampala.",
+    "best_time_to_visit": "Year-round"
+  },
+  {
+    "id": 49,
+    "name": "Lake Mutanda",
+    "region": "Southwestern",
+    "type": ["Relaxation", "Nature", "Scenery"],
+    "key_activities": ["Canoeing", "Hiking", "Relaxation"],
+    "budget_range": "Medium Budget",
+    "description": "A stunning volcanic lake with island-dotted waters and mountain backdrops.",
+    "best_time_to_visit": "Year-round"
+  }
+]
