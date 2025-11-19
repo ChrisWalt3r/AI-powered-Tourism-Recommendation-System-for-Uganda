@@ -1,7 +1,7 @@
-# AI-Powered Uganda Tourism Recommendation System
+# AI-powered Tourism Recommendation System for Uganda
 
 ## Project Overview
-An intelligent web application that provides personalized Ugandan tourism destination recommendations using Google Gemini AI. Users input their travel preferences in natural language and receive 2-3 relevant destination suggestions with detailed information.
+An intelligent web application that provides personalized Ugandan tourism destination recommendations using Google Gemini AI. Users input their travel preferences in natural language and receive up to 6 relevant destination suggestions with detailed information.
 
 **Team:** Group Eight - Computer Science Department  
 **Technology:** Google Gemini API (Free Tier), React.js, Node.js/Express
@@ -10,7 +10,7 @@ An intelligent web application that provides personalized Ugandan tourism destin
 
 ## Features
 - 🤖 AI-powered natural language query processing
-- 🗺️ 10 curated Uganda tourism destinations
+- 🗺️ 25 curated Uganda tourism destinations
 - 🎯 Personalized recommendations based on:
   - Budget (Low/Medium/High)
   - Activity preferences (Wildlife, Adventure, Cultural, etc.)
@@ -183,6 +183,7 @@ Health check endpoint to verify server status.
 8. **Mgahinga Gorilla National Park** - Gorillas & volcanoes (High budget)
 9. **Kibale National Park** - Primate tracking (Medium-High budget)
 10. **Ziwa Rhino Sanctuary** - Rhino tracking (Low-Medium budget)
+... and 15 more!
 
 ---
 
